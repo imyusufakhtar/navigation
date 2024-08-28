@@ -1,0 +1,134 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #10121b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8rem;
+}
+
+header {
+  background: #191d2b;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header #toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Hide toggle button by default */
+}
+
+header nav#header-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav#header-nav ul li {
+  margin-left: 20px;
+}
+
+header nav#header-nav ul li a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+header nav#header-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Side Nav Styles */
+nav#side-nav {
+  background: #191d2b;
+  width: 250px;
+  height: 100vh;
+/*  height: 100%;*/
+  position: relative;
+  top: 0;
+  left: -250px;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  transition: all .4s ease-out;
+  z-index: 10;
+}
+
+nav#side-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav#side-nav ul li {
+  padding: 15px;
+  border-bottom: 1px solid #555;
+}
+
+nav#side-nav ul li a {
+  font-weight: bold;
+  margin-left: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+nav#side-nav ul li:hover {
+  background: #10121b;
+}
+
+main {
+  top: 50px;
+  padding: 15px;
+  position: fixed;
+}
+
+/* Active class to show the side nav */
+nav#side-nav.active {
+  left: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header nav#header-nav {
+    display: none; /* Hide nav in header on small screens */
+  }
+
+  header #toggle-btn {
+    display: block; /* Show toggle button on small screens */
+  }
+}
+
+@media (min-width: 769px) {
+  nav#side-nav {
+    display: none; /* Hide side nav on large screens */
+  }
+}
